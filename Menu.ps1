@@ -47,20 +47,3 @@ else
 }
 
 Clear-Host
-
-Write-Host "Installing Adobe Reader and Ninite with Chrome and 7-zip"
-
-     start-process ".\Programs\ninite.exe" -NoNewWindow
-
-# Download the installer
-
-$source = "http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1502320053/AcroRdrDC1502320053_en_US.exe"
-$destination = "~\Downloads\adobeDC.exe"
-
-Invoke-WebRequest $source -OutFile $destination
-
-# Start the installation
-
-Start-Process -FilePath "~\Downloads\adobeDC.exe" -ArgumentList "/sPB /rs"
-
-
